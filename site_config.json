@@ -1,0 +1,111 @@
+{
+  "name": "AVA WANG",
+  "tagline": "NORDIC-TRAINED PRODUCT DESIGNER, DEVOTED TO AI INNOVATION. \\n 北欧留学，专注热爱AI创新的产品设计师",
+  "about": {
+    "title": "Hello there \\n I'm Ava Wang",
+    "bio": "植根于建筑学的严谨逻辑，接受北欧设计理念的熏陶。我致力于在 AI 驱动的创新中寻找结构精准与创意直觉的平衡点。从物理空间延伸至AI产品前沿，通过融合设计师的感性与产品思维，打造真正贴合用户需求的体验。 Rooted in architectural logic and Nordic design, I balance structural precision with creative intuition in AI innovation. Evolving from physical spaces to digital products, I blend design sensibility with a product mindset to build experiences that truly work for people.",
+    "photo": "https://picsum.photos/480/620?random=99",
+    "services": [
+      "Digital Design",
+      "UX/UI"
+    ],
+    "clients": [
+      "Axure RP",
+      "Figma",
+      "Visio",
+      "Claude Code",
+      "Google AI studio",
+      "Photoshop"
+    ]
+  },
+  "contact": {
+    "heading": "Let's talk",
+    "email": "mengwei.play@gmail.com",
+    "instagram": "https://instagram.com",
+    "linkedin": "https://linkedin.com",
+    "wechat": "vv_6025",
+    "wechatQR": "",
+    "location": "China"
+  },
+  "footer": {
+    "tagline": "Do you like\nWhat you see?",
+    "cta": "Let's connect"
+  },
+  "projects": [
+    {
+      "id": 1,
+      "title": "Mood Forest 心情森林",
+      "category": "APP DESIGN / CONCEPT PROJECT",
+      "image": "https://picui.ogmua.cn/s1/2026/03/14/69b530fd00914.webp",
+      "link": "projects/project-1.html",
+      "year": "2025",
+      "description": "Mood Forest reimagines the desktop plant as an empathetic AI \"buddy\" for the modern workplace. Moving beyond manual journaling, it uses natural language interaction to listen to users' daily reflections, automatically summarizing them into personalized digital stickers. The system visualizes emotional cycles through a generative forest, where each tree’s growth reflects the user’s mood. Integrated with 3D-printing and NFC technology, the plant serves as a physical social touchpoint, allowing colleagues to leave messages and interact via a simple \"tap,\" bridging personal reflection with spontaneous workplace connection. \n「心情森林」将传统的工位绿植重构为懂你的 AI “职场搭子”。它摒弃了繁琐的文字记录，通过自然语言交互倾听并总结用户的每日心境，生成极具个性化的手账便签。系统根据情绪数据动态生成一棵“心情树”，并以月度为周期汇聚成可视化的数字森林。结合 3D 打印与 NFC 技术，这一虚实结合的生态让盆栽成为了工位上的物理社交媒介，同事间可以通过手机“碰一碰”轻松留言互动，将私密的情绪调节转化为温情的职场社交。          \n🎙️ Voice Journaling (语音即日记)\n\n🌲 Mood Visualization (情绪可视化)\n\n🏷️ NFC Social Touch (NFC 实体社交)",
+      "images": [
+        "https://picui.ogmua.cn/s1/2026/03/14/69b530fd00914.webp",
+        "https://picui.ogmua.cn/s1/2026/03/14/69b54192e95c0.webp",
+        "https://picui.ogmua.cn/s1/2026/03/14/69b5405e1d281.webp",
+        "https://picui.ogmua.cn/s1/2026/03/14/69b542355eff8.webp",
+        "https://picui.ogmua.cn/s1/2026/03/14/69b542e25f382.webp"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Conversational AI Avatar 虚拟人交互产品",
+      "category": "INTELLIGENT HARDWARE",
+      "image": "https://picui.ogmua.cn/s1/2026/03/14/69b5426ec88f6.webp",
+      "link": "projects/project-2.html",
+      "year": "2025",
+      "description": "",
+      "images": [
+        "https://picui.ogmua.cn/s1/2026/03/14/69b5426ec88f6.webp"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "",
+      "category": "",
+      "image": "",
+      "link": "projects/project-3.html",
+      "year": "",
+      "description": "",
+      "images": []
+    },
+    {
+      "id": 4,
+      "title": "",
+      "category": "",
+      "image": "",
+      "link": "projects/project-4.html",
+      "year": "",
+      "description": "",
+      "images": []
+    },
+    {
+      "id": 5,
+      "title": "Traces 光影痕迹",
+      "category": "PHOTOGRAPHY",
+      "image": "http://47.77.188.111/portfolio/images/Casa-das-Hist--rias-Paula-Rego-1773479241552.jpg",
+      "link": "projects/project-5.html",
+      "year": "2019-2025",
+      "description": "A visual log of spaces and light across latitudes. From the stillness of the Nordics to the dynamic flow of Chinese cities, capturing the subtle traces of interaction between people and the spaces they inhabit.\n一份跨越纬度的空间与光影的视觉日志。从北欧的静谧到国内城市的律动，捕捉人与栖居环境之间微妙的交互痕迹。",
+      "images": [
+        "https://picui.ogmua.cn/s1/2026/03/14/69b528fe09f7f.webp",
+        "https://picui.ogmua.cn/s1/2026/03/14/69b52c2322761.webp",
+        "https://picui.ogmua.cn/s1/2026/03/14/69b52d28c9310.webp",
+        "https://picui.ogmua.cn/s1/2026/03/14/69b52e987f61f.webp",
+        "https://picui.ogmua.cn/s1/2026/03/14/69b52e9925a42.webp",
+        "https://picui.ogmua.cn/s1/2026/03/14/69b52f75eef12.webp"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "学生习作",
+      "category": "",
+      "image": "https://picsum.photos/700/500?random=66",
+      "link": "projects/project-6.html",
+      "year": "",
+      "description": "",
+      "images": []
+    }
+  ]
+}

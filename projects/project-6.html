@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Project — Ava Wang</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="project.css"/>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="../" class="nav-back">
+      <svg viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"/></svg>
+      Back
+    </a>
+    <span class="nav-title">Ava Wang</span>
+  </div>
+</header>
+
+<main>
+  <div class="project-hero reveal">
+    <div class="project-category" id="pCategory">CATEGORY</div>
+    <h1 class="project-title" id="pTitle">Project Title</h1>
+    <div class="project-meta">
+      <div class="meta-item">
+        <div class="meta-label">Year</div>
+        <div class="meta-value" id="pYear">2025</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Type</div>
+        <div class="meta-value" id="pCategoryMeta">—</div>
+      </div>
+    </div>
+    <p class="project-desc" id="pDesc">Project description goes here.</p>
+  </div>
+
+  <div class="project-images" id="pImages"></div>
+
+  <div class="project-nav" id="pNav"></div>
+</main>
+
+<script>const PROJECT_ID = 6;</script>
+<script src="project-template.js"></script>
+<script>
+  // 同步类型到 meta
+  document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      const cat = document.getElementById('pCategory');
+      const meta = document.getElementById('pCategoryMeta');
+      if (cat && meta) meta.textContent = cat.textContent;
+    }, 500);
+  });
+</script>
+</body>
+</html>

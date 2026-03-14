@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ava Wang — Creative Director</title>
+  <!-- 修改 title ↑ -->
+
+  <!-- Switzer 字体（与原网站一致） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- 自定义光标 -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- 鼠标跟随图片预览层（Works 区域用） -->
+  <div class="project-preview" id="projectPreview">
+    <img src="" alt="" id="previewImg" />
+  </div>
+
+  <!-- ========== 导航 ========== -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <div class="nav-left">
+        <a href="#hero" class="nav-name" id="navName"><!-- JS填充 --></a>
+      </div>
+      <nav class="nav-center" id="navLinks"><!-- JS填充 --></nav>
+      <div class="nav-right">
+        <span id="navCopyright"><!-- JS填充 --></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p class="hero-tagline" id="heroTagline"><!-- JS填充 --></p>
+      <div class="hero-name-wrap" id="heroName"><!-- JS填充 --></div>
+    </div>
+  </section>
+
+  <!-- ========== WORKS ========== -->
+  <section class="works" id="works">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <h2 class="works-big-title">Selected work</h2>
+      </div>
+      <!-- 项目网格：每行2个，左小右大交替，由 JS 渲染 -->
+      <div class="project-grid" id="projectGrid"><!-- JS填充 --></div>
+      <!-- See them all -->
+      <div class="see-all-wrap reveal">
+        <a class="see-all-link" id="seeAllBtn" href="#all-projects">see them all ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ALL PROJECTS（展开页）========== -->
+  <section class="all-projects" id="all-projects">
+    <div class="section-inner">
+      <div class="all-projects-grid" id="allProjectsGrid"><!-- JS填充 --></div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="about" id="about">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-left">
+          <div class="about-text reveal">
+            <h2 class="about-title" id="aboutTitle"><!-- JS填充 --></h2>
+            <p class="about-bio" id="aboutBio"><!-- JS填充 --></p>
+          </div>
+          <div class="about-meta reveal">
+            <div class="meta-col">
+              <p class="meta-label">Services</p>
+              <ul class="meta-list" id="servicesList"><!-- JS填充 --></ul>
+            </div>
+            <div class="meta-col">
+              <p class="meta-label">Skills</p>
+              <ul class="meta-list" id="clientsList"><!-- JS填充 --></ul>
+            </div>
+          </div>
+        </div>
+        <div class="about-right reveal">
+          <div class="about-photo-wrap">
+            <img class="about-photo" id="aboutPhoto" src="" alt="Ava Wang" />
+            <!-- 替换上面 img 的 src ← -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="contact-section" id="contact">
+    <div class="section-inner">
+      <div class="contact-top reveal">
+        <h2 class="contact-big-title" id="contactHeading"><!-- JS填充 --></h2>
+      </div>
+      <div class="contact-form-wrap reveal">
+        <form class="contact-form" id="contactForm" onsubmit="submitContact(event)">
+          <div class="cf-grid">
+            <div class="cf-field">
+              <label class="cf-label">Name <span class="cf-req">*</span></label>
+              <input class="cf-input" type="text" name="name" required placeholder="Your name" />
+            </div>
+            <div class="cf-field">
+              <label class="cf-label">Email <span class="cf-req">*</span></label>
+              <input class="cf-input" type="email" name="email" required placeholder="your@email.com" />
+            </div>
+            <div class="cf-field">
+              <label class="cf-label">Company</label>
+              <input class="cf-input" type="text" name="company" placeholder="Company name (optional)" />
+            </div>
+            <div class="cf-field cf-full">
+              <label class="cf-label">Message <span class="cf-req">*</span></label>
+              <textarea class="cf-input cf-textarea" name="message" required placeholder="Tell me about your project..."></textarea>
+            </div>
+          </div>
+          <div class="cf-footer">
+            <button class="cf-submit" type="submit" id="cfBtn">SEND MESSAGE</button>
+            <div class="cf-success" id="cfSuccess">✓ Message sent! I'll be in touch soon.</div>
+            <div class="cf-error" id="cfError"></div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- 微信二维码浮层 -->
+  <div class="wechat-overlay" id="wechatOverlay" onclick="closeWechat()">
+    <div class="wechat-modal" onclick="event.stopPropagation()">
+      <button class="wechat-close" onclick="closeWechat()">✕</button>
+      <img class="wechat-qr" id="wechatQRImg" src="" alt="WeChat QR" />
+      <p class="wechat-id" id="wechatId"><!-- JS填充 --></p>
+      <p class="wechat-hint">Scan to add on WeChat</p>
+    </div>
+  </div>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" id="footer">
+    <div class="footer-inner reveal">
+      <div class="footer-left">
+        <div class="footer-links" id="footerLinks"><!-- JS填充 --></div>
+        <!-- 微信按钮 -->
+        <button class="footer-wechat-btn" id="wechatBtn" onclick="openWechat()" style="display:none">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.328.328 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 0 1 .598.082l1.584.926a.272.272 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.582.582 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-7.062-6.122zm-3.01 3.99c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982z"/></svg>
+          WECHAT
+        </button>
+        <address class="footer-address" id="footerAddress"><!-- JS填充 --></address>
+      </div>
+      <div class="footer-right">
+        <p class="footer-tagline" id="footerTagline"><!-- JS填充 --></p>
+      </div>
+    </div>
+    <div class="footer-bottom reveal">
+      <span id="footerCopyright"><!-- JS填充 --></span>
+      <a class="btn-pill" id="footerCta" href="#"><!-- JS填充 --></a>
+    </div>
+  </footer>
+
+  <!-- config.js 先加载，script.js 后加载 -->
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+# 上传的用户图片不纳入版本控制（体积大）
+images/*.jpg
+images/*.jpeg
+images/*.png
+images/*.gif
+images/*.webp
+# 保留 cursor-icon.svg
+!images/cursor-icon.svg
+
+# 系统文件
+.DS_Store
+*.log
