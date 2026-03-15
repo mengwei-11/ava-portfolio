@@ -225,7 +225,7 @@ async function submitContact(e) {
   };
 
   try {
-    const r = await fetch('/api/portfolio/contact', {
+    const r = await fetch('https://ava-portfolio-backend-production.up.railway.app/api/portfolio/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
