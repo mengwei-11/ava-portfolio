@@ -221,7 +221,7 @@ async function submitContact(e) {
   };
 
   try {
-    const r = await fetch('/api/portfolio/contact', {
+    const r = await fetch('http://47.77.188.111/api/portfolio/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
