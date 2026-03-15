@@ -13,13 +13,15 @@ function renderMarkdown(text) {
 }
 
 (async function() {
-  // 读取 site_config.json
+  // 优先从 Railway API 读取最新配置，fallback 到静态文件
   let config;
   try {
-    const r = await fetch('../site_config.json?t=' + Date.now());
+    const RAILWAY_API = 'https://ava-portfolio-backend-production.up.railway.app/api/public/site-config';
+    let r = await fetch(RAILWAY_API).catch(() => null);
+    if (!r || !r.ok) r = await fetch('../site_config.json?t=' + Date.now());
     config = await r.json();
   } catch(e) {
-    console.warn('site_config.json not found, using fallback');
+    console.warn('site_config load failed, using fallback');
     config = null;
   }
 

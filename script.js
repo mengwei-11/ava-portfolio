@@ -37,11 +37,13 @@ async function loadSiteConfig() {
     projects:  JSON.parse(JSON.stringify(SITE_CONFIG.projects)),
   };
   try {
-    // 兼容 Vercel（/site_config.json）和原服务器（/portfolio/site_config.json）
-    const configUrl = location.hostname.includes('vercel.app') || location.hostname.includes('avawang')
+    // 优先从 Railway API 读取最新配置，fallback 到静态文件
+    const RAILWAY_API = 'https://ava-portfolio-backend-production.up.railway.app/api/public/site-config';
+    const staticUrl = location.hostname.includes('vercel.app') || location.hostname.includes('avawang')
       ? '/site_config.json?t=' + Date.now()
       : '/portfolio/site_config.json?t=' + Date.now();
-    const r = await fetch(configUrl);
+    let r = await fetch(RAILWAY_API).catch(() => null);
+    if (!r || !r.ok) r = await fetch(staticUrl);
     if (!r.ok) return base;
     const remote = await r.json();
     // 只覆盖 site_config.json 里存在的字段，nav/copyright 保留 base
