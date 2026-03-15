@@ -417,6 +417,12 @@ address { font-style: normal; }
   color: var(--muted);
   max-width: 520px;
 }
+.about-bio p {
+  margin: 0 0 1em 0;
+}
+.about-bio p:last-child {
+  margin-bottom: 0;
+}
 .about-meta {
   display: grid;
   grid-template-columns: 1fr 1fr;

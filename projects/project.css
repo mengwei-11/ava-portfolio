@@ -25,6 +25,8 @@ img{display:block;width:100%;object-fit:cover}
 .meta-label{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
 .meta-value{font-size:14px;color:var(--white)}
 .project-desc{font-size:15px;line-height:1.8;color:var(--muted);max-width:640px}
+.project-desc p{margin:0 0 1em 0}
+.project-desc p:last-child{margin-bottom:0}
 
 /* images */
 .project-images{padding:0 40px 80px;max-width:var(--max-w);margin:0 auto;display:flex;flex-direction:column;gap:16px}
