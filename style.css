@@ -271,33 +271,37 @@ address { font-style: normal; }
   transform: none;
 }
 
-/* 小卡（左侧）：自身高度比大卡矮，用 align-self */
+/* 两张卡都底部对齐，高度由图片比例决定，不拉伸 */
 .project-card.card-small {
   align-self: end;
 }
 .project-card.card-large {
-  align-self: stretch;
+  align-self: end;
 }
 
-/* 图片容器 */
+/* 图片容器 — 强制横图裁切，图片不论竖横都按比例显示 */
 .project-card-img {
   overflow: hidden;
   border-radius: 6px;
   position: relative;
+  width: 100%;
 }
+/* 用 padding-top 技巧强制比例，img absolute 填满 */
 .card-small .project-card-img {
-  aspect-ratio: 4/3;
+  padding-top: 56.25%; /* 16:9 */
+  height: 0;
 }
 .card-large .project-card-img {
-  aspect-ratio: 3/4;    /* 高图，像参考图右侧大图 */
+  padding-top: 75%;    /* 4:3 */
+  height: 0;
+  max-height: none;
 }
 .project-card-img img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  display: block;
-  transform: scale(1);
-  transition: transform .55s var(--ease);
-  will-change: transform;
+  position: absolute !important;
+  top: 0; left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
 }
 /* hover 放大 5% */
 .project-card:hover .project-card-img img {

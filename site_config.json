@@ -4,7 +4,7 @@
   "about": {
     "title": "Hello there \\n I'm Ava Wang",
     "bio": "植根于建筑学的严谨逻辑，接受北欧设计理念的熏陶。我致力于在 AI 驱动的创新中寻找结构精准与创意直觉的平衡点。从物理空间延伸至AI产品前沿，通过融合设计师的感性与产品思维，打造真正贴合用户需求的体验。 Rooted in architectural logic and Nordic design, I balance structural precision with creative intuition in AI innovation. Evolving from physical spaces to digital products, I blend design sensibility with a product mindset to build experiences that truly work for people.",
-    "photo": "https://picsum.photos/480/620?random=99",
+    "photo": "https://picui.ogmua.cn/s1/2026/03/15/69b61e0e245e1.webp",
     "services": [
       "Digital Design",
       "UX/UI"
@@ -36,7 +36,7 @@
       "id": 1,
       "title": "Mood Forest 心情森林",
       "category": "APP DESIGN / CONCEPT PROJECT",
-      "image": "https://picui.ogmua.cn/s1/2026/03/14/69b530fd00914.webp",
+      "image": "https://picui.ogmua.cn/s1/2026/03/15/69b61fb33084a.webp",
       "link": "projects/project-1.html",
       "year": "2025",
       "description": "Mood Forest reimagines the desktop plant as an empathetic AI \"buddy\" for the modern workplace. Moving beyond manual journaling, it uses natural language interaction to listen to users' daily reflections, automatically summarizing them into personalized digital stickers. The system visualizes emotional cycles through a generative forest, where each tree’s growth reflects the user’s mood. Integrated with 3D-printing and NFC technology, the plant serves as a physical social touchpoint, allowing colleagues to leave messages and interact via a simple \"tap,\" bridging personal reflection with spontaneous workplace connection. \n「心情森林」将传统的工位绿植重构为懂你的 AI “职场搭子”。它摒弃了繁琐的文字记录，通过自然语言交互倾听并总结用户的每日心境，生成极具个性化的手账便签。系统根据情绪数据动态生成一棵“心情树”，并以月度为周期汇聚成可视化的数字森林。结合 3D 打印与 NFC 技术，这一虚实结合的生态让盆栽成为了工位上的物理社交媒介，同事间可以通过手机“碰一碰”轻松留言互动，将私密的情绪调节转化为温情的职场社交。          \n🎙️ Voice Journaling (语音即日记)\n\n🌲 Mood Visualization (情绪可视化)\n\n🏷️ NFC Social Touch (NFC 实体社交)",
@@ -44,7 +44,7 @@
         "https://picui.ogmua.cn/s1/2026/03/14/69b530fd00914.webp",
         "https://picui.ogmua.cn/s1/2026/03/14/69b54192e95c0.webp",
         "https://picui.ogmua.cn/s1/2026/03/14/69b5405e1d281.webp",
-        "https://picui.ogmua.cn/s1/2026/03/14/69b542355eff8.webp",
+        "https://picui.ogmua.cn/s1/2026/03/15/69b58f562c018.webp",
         "https://picui.ogmua.cn/s1/2026/03/14/69b542e25f382.webp"
       ]
     },
@@ -52,33 +52,43 @@
       "id": 2,
       "title": "Conversational AI Avatar 虚拟人交互产品",
       "category": "INTELLIGENT HARDWARE",
-      "image": "https://picui.ogmua.cn/s1/2026/03/14/69b5426ec88f6.webp",
+      "image": "https://picui.ogmua.cn/s1/2026/03/15/69b62106554e5.webp",
       "link": "projects/project-2.html",
       "year": "2025",
-      "description": "",
+      "description": "A hardware-integrated AI system for primary education, featuring portrait-screen digital humans for immersive, face-to-face interaction. Powered by noise-adaptive ASR and synchronized motion, it enables natural dialogue in bustling campuses. By providing real-time emotional feedback, the system moves beyond one-way teaching to foster active inquiry in a new smart education ecosystem.\n产品面向小学场景，采用软硬件结合的竖屏交互形态，让学生与AI虚拟人面对面沉浸式互动。搭载嘈杂环境自适应ASR识别与TTS合成技术，搭配拟人化表情、动作同步驱动，支持学生在校园场景自然提问，实时获得带语音反馈与情绪表达的智能解答。它打破传统教育单向输出的局限，培养主动探究的学习习惯，打造沉浸式智慧教育新生态。",
       "images": [
-        "https://picui.ogmua.cn/s1/2026/03/14/69b5426ec88f6.webp"
+        "https://picui.ogmua.cn/s1/2026/03/14/69b5426ec88f6.webp",
+        "https://picui.ogmua.cn/s1/2026/03/14/69b552bbc2e48.webp",
+        "https://picui.ogmua.cn/s1/2026/03/14/69b552bb935a1.webp",
+        "https://picui.ogmua.cn/s1/2026/03/14/69b552bbeb4f0.webp",
+        "https://picui.ogmua.cn/s1/2026/03/14/69b552c36c98c.webp",
+        "https://picui.ogmua.cn/s1/2026/03/14/69b554430a8cc.webp",
+        "https://picui.ogmua.cn/s1/2026/03/14/69b554441c452.webp"
       ]
     },
     {
       "id": 3,
       "title": "",
       "category": "",
-      "image": "",
+      "image": "https://picui.ogmua.cn/s1/2026/03/15/69b61fb33084a.webp",
       "link": "projects/project-3.html",
       "year": "",
       "description": "",
-      "images": []
+      "images": [
+        "https://picui.ogmua.cn/s1/2026/03/15/69b61fb33084a.webp"
+      ]
     },
     {
       "id": 4,
       "title": "",
       "category": "",
-      "image": "",
+      "image": "https://picui.ogmua.cn/s1/2026/03/15/69b61fb33084a.webp",
       "link": "projects/project-4.html",
       "year": "",
       "description": "",
-      "images": []
+      "images": [
+        "https://picui.ogmua.cn/s1/2026/03/15/69b61fb33084a.webp"
+      ]
     },
     {
       "id": 5,
@@ -99,13 +109,21 @@
     },
     {
       "id": 6,
-      "title": "学生习作",
-      "category": "",
-      "image": "https://picsum.photos/700/500?random=66",
+      "title": "Hackathon 黑客马拉松",
+      "category": "CONCEPT PROJECT",
+      "image": "https://picui.ogmua.cn/s1/2026/03/15/69b61fb33084a.webp",
       "link": "projects/project-6.html",
-      "year": "",
-      "description": "",
+      "year": "2021",
+      "description": "https://picui.ogmua.cn/s1/2026/03/15/69b61fb33084a.webp",
       "images": []
     }
+  ],
+  "heroImages": [
+    "https://picui.ogmua.cn/s1/2026/03/15/69b61fb33084a.webp",
+    "https://picui.ogmua.cn/s1/2026/03/15/69b62106554e5.webp",
+    "https://picui.ogmua.cn/s1/2026/03/15/69b61fb33084a.webp",
+    "https://picui.ogmua.cn/s1/2026/03/15/69b61fb33084a.webp",
+    "http://47.77.188.111/portfolio/images/Casa-das-Hist--rias-Paula-Rego-1773479241552.jpg",
+    "https://picui.ogmua.cn/s1/2026/03/15/69b61fb33084a.webp"
   ]
 }

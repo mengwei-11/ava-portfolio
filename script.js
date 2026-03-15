@@ -355,7 +355,10 @@ const EXIT_MS    = 380;   // 退出动画时长
 function initHeroImages() {
   const hero   = document.getElementById('hero');
   const C      = SITE_CONFIG;
-  const images = C.projects.map(p => p.image);
+  // 优先使用独立配置的 heroImages，否则降级到项目封面图
+  const images = (C.heroImages && C.heroImages.length)
+    ? C.heroImages.filter(Boolean)
+    : C.projects.map(p => p.image).filter(Boolean);
   if (!images.length) return;
 
   // 预加载图片，避免首次出现时闪烁

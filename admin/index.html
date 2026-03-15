@@ -130,6 +130,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
     <button class="tab-btn" onclick="switchTab('projects')">Projects</button>
     <button class="tab-btn" onclick="switchTab('contacts')">Contact Records</button>
     <button class="tab-btn" onclick="switchTab('wechat')">WeChat</button>
+    <button class="tab-btn" onclick="switchTab('hero')">🖼 Hero Images</button>
     <button class="tab-btn" onclick="switchTab('upload')">📁 Images</button>
   </div>
 
@@ -183,6 +184,22 @@ tr:hover td{background:rgba(255,255,255,.02)}
       <div class="save-bar">
         <button class="btn-primary" onclick="saveProjects()">Save All Projects</button>
         <span class="save-msg" id="proj-msg">Saved!</span>
+      </div>
+    </div>
+
+    <!-- TAB: Hero Images -->
+    <div class="tab-panel" id="tab-hero">
+      <div class="form-section">
+        <div class="form-section-title">首页鼠标跟随图片</div>
+        <p style="font-size:12px;color:var(--muted);margin-bottom:20px">每行一个图片链接，鼠标在首页移动时会循环展示这些图片。可从右侧「📁 Images」上传图片后复制链接填入。</p>
+        <div id="heroImageList" style="display:flex;flex-direction:column;gap:10px;margin-bottom:16px">
+          <!-- JS 动态填充 -->
+        </div>
+        <button class="btn-secondary" style="margin-top:4px" onclick="addHeroImageRow('')">+ Add Image</button>
+      </div>
+      <div class="save-bar">
+        <button class="btn-primary" onclick="saveHeroImages()">Save Hero Images</button>
+        <span class="save-msg" id="hero-msg">Saved!</span>
       </div>
     </div>
 
@@ -395,6 +412,56 @@ async function saveProjects() {
   showToast(res.ok ? 'Projects saved!' : 'Error: '+res.error, res.ok ? 'success' : 'error');
 }
 
+// ── Tab: Hero Images ──
+function renderHeroTab() {
+  if (!siteConfig) return;
+  const list = document.getElementById('heroImageList');
+  list.innerHTML = '';
+  const imgs = siteConfig.heroImages || [];
+  if (imgs.length === 0) {
+    addHeroImageRow('');
+  } else {
+    imgs.forEach(url => addHeroImageRow(url));
+  }
+}
+
+function addHeroImageRow(url) {
+  const list = document.getElementById('heroImageList');
+  const row = document.createElement('div');
+  row.className = 'hero-img-row';
+  row.style.cssText = 'display:flex;gap:8px;align-items:flex-start';
+  row.innerHTML = `
+    <div style="flex:1;display:flex;flex-direction:column;gap:6px">
+      <input type="text" class="hero-img-input" value="${esc(url)}" placeholder="https://..." oninput="updateHeroPreview(this)" style="width:100%" />
+      <img class="hero-img-thumb" src="${url}" style="height:60px;max-width:120px;object-fit:cover;border-radius:4px;display:${url?'block':'none'}" />
+    </div>
+    <button class="btn-secondary" style="padding:8px 12px;flex-shrink:0;margin-top:0" onclick="this.closest('.hero-img-row').remove()">✕</button>
+  `;
+  list.appendChild(row);
+}
+
+function updateHeroPreview(input) {
+  const thumb = input.closest('.hero-img-row').querySelector('.hero-img-thumb');
+  if (thumb) { thumb.src = input.value; thumb.style.display = input.value ? 'block' : 'none'; }
+}
+
+async function saveHeroImages() {
+  const inputs = document.querySelectorAll('.hero-img-input');
+  const urls = [...inputs].map(i => i.value.trim()).filter(Boolean);
+  siteConfig.heroImages = urls;
+  const res = await saveConfig();
+  const msg = document.getElementById('hero-msg');
+  if (res.ok) {
+    msg.style.display = 'inline';
+    msg.classList.remove('error');
+    msg.textContent = 'Saved!';
+    setTimeout(() => msg.style.display = 'none', 3000);
+    showToast('Hero images saved!', 'success');
+  } else {
+    showToast('Error: ' + res.error, 'error');
+  }
+}
+
 // ── Tab 3: Contacts ──
 let contactsData = [];
 async function loadContacts() {
@@ -475,6 +542,7 @@ window.switchTab = function(name) {
   document.getElementById('tab-' + name).classList.add('active');
   if (name === 'contacts') loadContacts();
   if (name === 'wechat') renderWechatTab();
+  if (name === 'hero') renderHeroTab();
   if (name === 'upload') loadImages();
 };
 

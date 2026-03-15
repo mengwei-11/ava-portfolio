@@ -20,7 +20,11 @@
 
   // 渲染内容
   if (p.title) document.getElementById('pTitle').textContent = p.title;
-  if (p.category) document.getElementById('pCategory').textContent = p.category;
+  if (p.category) {
+    document.getElementById('pCategory').textContent = p.category;
+    const meta = document.getElementById('pCategoryMeta');
+    if (meta) meta.textContent = p.category;
+  }
   if (p.year) document.getElementById('pYear').textContent = p.year;
   if (p.description) document.getElementById('pDesc').textContent = p.description;
   document.title = (p.title || 'Project') + ' — Ava Wang';
