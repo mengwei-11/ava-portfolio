@@ -1,6 +1,17 @@
 // 项目子页面公共脚本
 // PROJECT_ID 由各子页面在加载此脚本前定义
 
+// ── 轻量 Markdown 渲染 ──
+function renderMarkdown(text) {
+  if (!text) return '';
+  return text
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\n{2,}/g, '</p><p>')
+    .replace(/\n/g, '<br>')
+    .replace(/^/, '<p>').replace(/$/, '</p>');
+}
+
 (async function() {
   // 读取 site_config.json
   let config;
@@ -26,7 +37,7 @@
     if (meta) meta.textContent = p.category;
   }
   if (p.year) document.getElementById('pYear').textContent = p.year;
-  if (p.description) document.getElementById('pDesc').textContent = p.description;
+  if (p.description) document.getElementById('pDesc').innerHTML = renderMarkdown(p.description);
   document.title = (p.title || 'Project') + ' — Ava Wang';
 
   // 图片展示

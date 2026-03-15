@@ -2,6 +2,25 @@
    AVA WANG — 交互脚本
    ============================================ */
 
+// ── 轻量 Markdown 渲染（支持换行、粗体、分段）──
+function renderMarkdown(text) {
+  if (!text) return '';
+  return text
+    // XSS 防护：转义 HTML 特殊字符
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    // **粗体**
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    // 空行 → 段落分隔
+    .replace(/\n{2,}/g, '</p><p>')
+    // 单个换行 → <br>
+    .replace(/\n/g, '<br>')
+    // 包裹段落
+    .replace(/^/, '<p>')
+    .replace(/$/, '</p>');
+}
+
 // ============ 0. 优先加载 site_config.json，fallback 到 config.js ============
 
 async function loadSiteConfig() {
@@ -129,7 +148,7 @@ function renderSite() {
 
   // About
   document.getElementById('aboutTitle').textContent = C.about.title.replace(/\\n/g, '\n');
-  document.getElementById('aboutBio').textContent = C.about.bio;
+  document.getElementById('aboutBio').innerHTML = renderMarkdown(C.about.bio);
   document.getElementById('aboutPhoto').src = C.about.photo;
   const svcList = document.getElementById('servicesList');
   C.about.services.forEach(s => {
