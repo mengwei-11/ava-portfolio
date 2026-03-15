@@ -28,6 +28,7 @@ async function loadSiteConfig() {
     if (remote.contact) base.contact = { ...base.contact, ...remote.contact };
     if (remote.footer)  base.footer  = remote.footer;
     if (remote.projects && remote.projects.length) base.projects = remote.projects;
+    if (remote.heroImages && remote.heroImages.length) base.heroImages = remote.heroImages;
   } catch { /* 静默失败，用 base */ }
   return base;
 }
