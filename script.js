@@ -18,7 +18,11 @@ async function loadSiteConfig() {
     projects:  JSON.parse(JSON.stringify(SITE_CONFIG.projects)),
   };
   try {
-    const r = await fetch('/portfolio/site_config.json?t=' + Date.now());
+    // 兼容 Vercel（/site_config.json）和原服务器（/portfolio/site_config.json）
+    const configUrl = location.hostname.includes('vercel.app') || location.hostname.includes('avawang')
+      ? '/site_config.json?t=' + Date.now()
+      : '/portfolio/site_config.json?t=' + Date.now();
+    const r = await fetch(configUrl);
     if (!r.ok) return base;
     const remote = await r.json();
     // 只覆盖 site_config.json 里存在的字段，nav/copyright 保留 base
